@@ -1,0 +1,244 @@
+body {
+    background-color: purple; /* Cambiar el fondo a morado */
+    overflow: hidden; /* Evitar el desplazamiento del body */
+}
+
+.content {
+    height: 100vh; /* Altura del viewport */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+.rectangle {
+    position: fixed; /* Mantener el rectángulo en la misma posición al desplazarse */
+    top: 20px; /* Alejar 20px del borde superior */
+    right: 80px; /* Alejar 20px del borde derecho */
+    width: 300px; /* Ancho del rectángulo */
+    height: 800px; /* Alto del rectángulo */
+    background-color: #ccc; /* Color de fondo del rectángulo */
+    border-radius: 10px; /* Bordes redondeados (opcional) */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    flex-direction: column; /* Alinear en columna */
+    justify-content: space-between; /* Espacio entre los elementos */
+    padding: 20px; /* Espaciado interior */
+}
+
+.white-box {
+    position: fixed; /* Mantener el cuadro en el mismo lugar al desplazarse */
+    top: 35%; /* Centrar verticalmente */
+    left: 35%; /* Centrar horizontalmente */
+    width: 600px; /* Ancho del cuadro blanco */
+    height: 400px; /* Alto del cuadro blanco */
+    background-color: white; /* Color de fondo blanco */
+    border-radius: 10px; /* Bordes redondeados (opcional) */
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+    min-width: 300px; /* Ancho mínimo para el cuadro blanco */
+    min-height: 200px; /* Alto mínimo para el cuadro blanco */
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+    :root {
+        --rectangle-width-mobile: 80%; /* Ancho del rectángulo en móviles */
+        --rectangle-height-mobile: 50%; /* Alto del rectángulo en móviles */
+        --white-box-width-mobile: 95%; /* Ancho del cuadro blanco en móviles */
+        --white-box-height-mobile: auto; /* Alto del cuadro blanco en móviles */
+    }
+
+    .rectangle {
+        display: block; /* Mostrar el rectángulo en móviles */
+        width: var(--rectangle-width-mobile); /* Usar la variable para el ancho */
+        height: var(--rectangle-height-mobile); /* Usar la variable para la altura */
+        top: 450px; /* Reajustar posición vertical */
+        right: 0%; /* Reajustar posición horizontal */
+        margin: auto; /* Centrar horizontalmente */
+        position: relative; /* Permite que los botones se posicionen en relación a este contenedor */
+    }
+
+    .white-box {
+        width: var(--white-box-width-mobile); /* Usar la variable para el ancho */
+        height: var(--white-box-height-mobile); /* Usar la variable para la altura */
+        top: 30%; /* Reajustar posición vertical */
+        left: 50%; /* Reajustar posición horizontal */
+        transform: translate(-50%, -50%); /* Asegurarse de que esté centrado */
+    }
+
+    .button-container {
+        display: flex; /* Usar flexbox para alinear los botones horizontalmente */
+        justify-content: space-between; /* Espacio entre los botones */
+        margin-top: 20px; /* Espacio superior para separar de la caja blanca */
+        position: relative; /* Permite mover los botones */
+    }
+
+    /* Ajustes de posición específicos */
+    .encrypt-button {
+        position: relative; /* Permitir mover este botón */
+        left: 10px; /* Mover el botón de encriptar 10px a la derecha */
+        top: 120px; /* Mover el botón de encriptar 100px hacia abajo */
+    }
+
+    .decrypt-button {
+        position: relative; /* Permitir mover este botón */
+        left: 1px; /* Mover el botón de desencriptar 1px a la derecha */
+        top: 120px; /* Mover el botón de desencriptar 100px hacia abajo */
+    }
+    .copy-button {
+        order: 3; /* Cambiar el orden del botón de copiar (tercero) */
+    }
+
+    .reload-button {
+        order: 4; /* Cambiar el orden del botón de recargar (último) */
+    }
+
+}
+
+/* Media query para laptops */
+@media (min-width: 481px) and (max-width: 1024px) {
+    :root {
+        --rectangle-width-laptop: 60%; /* Ancho del rectángulo en laptops */
+        --rectangle-height-laptop: 35%; /* Alto del rectángulo en laptops */
+        --white-box-width-laptop: 90%; /* Ancho del cuadro blanco en laptops */
+        --white-box-height-laptop: 35%; /* Alto del cuadro blanco en laptops */
+        --button-height-laptop: 30px; /* Altura de los botones */
+        --button-padding-laptop: 5px 10px; /* Relleno de los botones */
+    }
+
+    .rectangle {
+        display: block; /* Mostrar el rectángulo en laptops */
+        width: var(--rectangle-width-laptop); /* Usar la variable para el ancho */
+        height: var(--rectangle-height-laptop); /* Usar la variable para la altura */
+        top: 30%; /* Reajustar posición vertical */
+        right: 15%; /* Reajustar posición horizontal */
+        margin: auto; /* Centrar horizontalmente */
+    }
+
+    .white-box {
+        width: var(--white-box-width-laptop); /* Usar la variable para el ancho */
+        height: var(--white-box-height-laptop); /* Usar la variable para la altura */
+        top: 20%; /* Reajustar posición vertical */
+        left: 50%; /* Reajustar posición horizontal */
+        transform: translate(-50%, -50%); /* Asegurarse de que esté centrado */
+    }
+
+    .button-container {
+        display: flex; /* Usar flexbox para alinear los botones horizontalmente */
+        justify-content: center; /* Centrar los botones */
+        margin-top: 20px; /* Espacio superior para separar de la caja blanca */
+    }
+
+    .encrypt-button {
+        margin-right: 10px; /* Espacio entre el botón de encriptar y el de desencriptar */
+    }
+
+    .copy-button-1{
+
+    .reload-button-1 {
+        height: var(--button-height); /* Altura del botón */
+        padding: var(--button-padding); /* Relleno del botón */
+        font-size: 0.9em; /* Tamaño de fuente más pequeño */
+    }
+}
+}
+
+
+.button-container {
+    display: flex; /* Usar flexbox para alinear los botones horizontalmente */
+    justify-content: center; /* Centrar los botones */
+    margin-top: 20px; /* Espacio superior para separar de la caja blanca */
+}
+
+.encrypt-button,
+.decrypt-button,
+.copy-button,
+.reload-button {
+    padding: 10px 20px; /* Espaciado interior para los botones */
+    margin: 0 10px; /* Espacio entre los botones */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+.encrypt-button {
+    background-color: #11c3cf; /* Color de fondo del botón de encriptar */
+    color: white; /* Color de texto blanco */
+}
+
+.decrypt-button {
+    background-color: #f44336; /* Color de fondo del botón de desencriptar */
+    color: white; /* Color de texto blanco */
+}
+
+.copy-button {
+    background-color: #11c3cf; /* Color de fondo del botón de copiar */
+    color: white; /* Color de texto blanco */
+}
+
+.reload-button {
+    background-color: transparent; /* Fondo transparente */
+    color: #333; /* Color del icono */
+    font-size: 35px; /* Tamaño del icono */
+    border: none; /* Sin borde */
+}
+
+.encrypt-button:hover,
+.decrypt-button:hover,
+.copy-button:hover,
+.reload-button:hover {
+    opacity: 0.8; /* Efecto de hover para todos los botones */
+}
+
+.close-button {
+    position: absolute; /* Posicionamiento absoluto para colocar la X en la esquina */
+    top: 1px; /* Espacio desde la parte superior */
+    right: 20px; /* Espacio desde la derecha */
+    font-size: 24px; /* Tamaño de la fuente para la X */
+    color: #333; /* Color gris oscuro para un estilo plano */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+}
+
+.text-area {
+    width: 100%; /* Ancho completo del cuadro */
+    height: 100%; /* Altura completa del cuadro */
+    border: none; /* Sin borde */
+    background: transparent; /* Fondo transparente */
+    font-size: 20px; /* Tamaño de fuente más grande */
+    resize: none; /* Evitar que el usuario redimensione el textarea */
+    outline: none; /* Eliminar contorno al enfocar */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluir el padding en el tamaño total */
+}
+
+.output-text-area {
+    width: 100%; /* Ancho completo del rectángulo */
+    height: calc(100% - 60px); /* Altura ajustada para mantener proporciones */
+    border: none; /* Sin borde */
+    background: transparent; /* Fondo transparente */
+    font-size: 20px; /* Tamaño de fuente más grande */
+    resize: none; /* Evitar que el usuario redimensione el textarea */
+    outline: none; /* Eliminar contorno al enfocar */
+    margin-bottom: 10px; /* Espacio entre el área de texto y el botón */
+}
+
+.copy-message {
+    position: absolute; /* Posicionamiento absoluto para que siga al cursor */
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro semi-transparente */
+    color: white; /* Color de texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    display: none; /* Oculto por defecto */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+/* Cambia el color del icono al pasar el mouse */
+.reload-button:hover {
+    color: #11c3cf; /* Cambia el color al pasar el mouse */
+}
+
+#input-info {
+    margin-top: 7px; /* Espacio entre el cuadro blanco y el mensaje */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+

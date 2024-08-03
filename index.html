@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptar y Desencriptar</title>
+    <link rel="stylesheet" href="style.css"> <!-- Asegúrate de que el CSS esté enlazado -->
+</head>
+<body>
+    <div class="rectangle">
+        <textarea class="output-text-area" placeholder="Texto encriptado/desencriptado" readonly></textarea>
+        <div class="button-container">
+            <button class="copy-button">Copiar</button>
+            <span class="reload-button">🔄</span>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <span class="close-button">✖</span>
+        <textarea class="text-area" placeholder="Ingresa el texto" oninput="validateInput(this)"></textarea>
+        <div id="input-info" style="color: red;">¡Solo letras minúsculas y sin acentos!</div>
+        <div class="button-container">
+            <button class="encrypt-button">Encriptar</button>
+            <button class="decrypt-button">Desencriptar</button>
+        </div>
+    </div>
+
+    <div class="copy-message">Texto copiado!</div>
+    <script src="progra.js"></script> <!-- Asegúrate de que el JS esté enlazado -->
+</body>
+</html>
